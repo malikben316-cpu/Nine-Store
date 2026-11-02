@@ -1,0 +1,94 @@
+/* تنسيقات خاصة بصفحة المكتبة */
+.top-bar h1 {
+    font-size: 1.5rem;
+    color: #fff;
+    margin-bottom: 5px;
+}
+
+.empty-msg {
+    color: #888;
+    font-size: 1.1rem;
+    text-align: center;
+    padding: 60px 20px;
+}
+
+/* زر الحذف من المكتبة */
+.btn-remove {
+    width: 100%;
+    padding: 8px;
+    background-color: #5b21b6;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.2s;
+    margin-top: auto;
+}
+
+.btn-remove:hover {
+    background-color: #7c3aed;
+}
+/* شريط التحميل السفلي (Glassmorphism) */
+.download-status-bar {
+    position: fixed;
+    bottom: 20px;
+    left: 240px; /* ليكون بجانب القائمة الجانبية */
+    right: 20px;
+    background: rgba(23, 17, 38, 0.85);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(124, 58, 237, 0.4);
+    border-radius: 12px;
+    padding: 15px 20px;
+    z-index: 1000;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    animation: slideUp 0.3s ease-out;
+}
+
+body[dir="rtl"] .download-status-bar {
+    left: 20px;
+    right: 240px;
+}
+
+@keyframes slideUp {
+    from { transform: translateY(50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.download-info {
+    display: flex;
+    justify-content: center;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #fff;
+}
+
+/* شريط تقدم التحميل داخل البطاقة */
+.download-progress-container {
+    width: 100%;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+    margin: 10px 0;
+    overflow: hidden;
+    display: none; /* مخفي افتراضياً */
+}
+
+.download-progress-bar {
+    width: 0%;
+    height: 100%;
+    background: #c4b5fd; /* بنفسجي فاتح جداً */
+    box-shadow: 0 0 12px rgba(196, 181, 253, 0.6);
+    transition: width 0.3s linear;
+}
+
+.download-percentage {
+    font-size: 0.75rem;
+    color: #a78bfa;
+    margin-bottom: 5px;
+    display: none;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
